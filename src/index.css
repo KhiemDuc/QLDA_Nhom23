@@ -37,6 +37,17 @@ code {
   color: transparent;
 }
 
+.username{
+  max-width: 9.375rem;
+  padding-left: 0.3125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.username:hover{
+  cursor: pointer;
+}
+
 .cart-dropdown {
   width: 600px;
 }

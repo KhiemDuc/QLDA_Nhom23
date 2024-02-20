@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../contexts/UserContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useUserContext()
+  const navigate = useNavigate();
+  
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
@@ -15,11 +20,13 @@ const Login = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     try {
       // Gọi API để xác thực đăng nhập
       // Ví dụ: fetch, Axios, hoặc các thư viện HTTP khác
-      console.log('Login request:', { username, password });
+      login(username); // Truyền tên người dùng sau khi đăng nhập thành công
+
+      // Chuyển hướng đến trang chính sau khi đăng nhập
+      navigate('/');
 
       // Sau khi xác thực thành công, bạn có thể thực hiện các hành động khác ở đây
     } catch (error) {

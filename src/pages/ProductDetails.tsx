@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useShoppingContext } from '../contexts/ShoppingContext';
 import DATA from '../data/products'
+import { useNavigate } from 'react-router-dom';
 
 type ProductItem = {
     id: number
@@ -17,6 +18,7 @@ const ProductDetail = () => {
     // const [product, setProduct] = useState<ProductItem>()
     const proid = useParams();
     const { addCartItem } = useShoppingContext()
+    
 
     // useEffect(() => {
     //     console.log("get products data from api")
