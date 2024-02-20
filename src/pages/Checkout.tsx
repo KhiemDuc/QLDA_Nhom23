@@ -26,7 +26,7 @@ const Checkout = () => {
                     {cartItems.map(item => {
                         return (
                             <tr key={item.id}>
-                                <td><img src={item.thumbnail} className='img-fluid rounded' alt={item.name} /></td>
+                                <td><img src={item.img} className='img-fluid rounded' alt={item.name} /></td>
                                 <td>{item.name}</td>
                                 <td>{formatCurrency(item.price)}</td>
                                 <td>{item.qty}

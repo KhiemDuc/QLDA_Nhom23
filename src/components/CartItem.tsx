@@ -7,16 +7,16 @@ type CartItemProps = {
     name: string
     price: number
     qty: number
-    thumbnail: string
+    img: string
 }
 
-const CartItem = ({ id, name, price, qty, thumbnail }: CartItemProps) => {
+const CartItem = ({ id, name, price, qty, img }: CartItemProps) => {
 
     const { increaseQty, decreaseQty, removeCartItem } = useShoppingContext()
 
     return (
         <tr>
-            <td><img src={thumbnail} className="img-fluid rounded" alt="Product 1" /></td>
+            <td><img src={img} className="img-fluid rounded" alt="Product 1" /></td>
             <td><span className="item-name">{name}</span></td>
             <td><span className="item-quantity">{formatCurrency(price)} <i className="fa-solid fa-xmark"></i> {qty}</span>
                 <button type="button" className="btn btn-sm btn-primary ms-4 me-1" onClick={() => decreaseQty(id)}><strong>-</strong></button>

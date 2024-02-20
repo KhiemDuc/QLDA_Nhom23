@@ -11,12 +11,13 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <Link className="navbar-brand" to='/'><strong>NXB DEV DEMO</strong></Link>
+                <Link className="navbar-brand" to='/'><strong>Web Bán Hàng</strong></Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <Link className="nav-link" to='/'>Home</Link>
                         </li>
+                        
                         <li className="nav-item">
                             <Link className="nav-link" to='/products'>Products</Link>
                         </li>
@@ -28,6 +29,9 @@ const Header = () => {
 
                 <div className="ml-auto">
                     <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link border rounded p-2 fw-normal me-2" to='/login'>Login</Link>
+                        </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownCart" data-bs-auto-close="outside" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">

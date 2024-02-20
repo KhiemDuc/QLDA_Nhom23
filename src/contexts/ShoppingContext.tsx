@@ -9,14 +9,15 @@ type CartItem = {
     name: string
     price: number
     qty: number
-    thumbnail: string
+    img: string
 }
 
 type ProductItem = {
     id: number
     name: string
     price: number
-    thumbnail: string
+    img: string
+    desc: string
 }
 
 interface ShoppingContextType {

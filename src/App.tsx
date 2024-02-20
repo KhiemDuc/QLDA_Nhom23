@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
+import Login from './pages/Login';
+import ProductDetail from './pages/ProductDetails';
 
 function App() {
   return (
@@ -15,9 +17,11 @@ function App() {
       <div className="container mt-5">
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/products' element={<Products />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/product/:id' element={<ProductDetail />} />
         </Routes>
       </div>
     </>

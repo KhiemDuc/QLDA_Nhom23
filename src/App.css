@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.myElement {
+  /* Thiết lập kích thước ban đầu của phần tử */
+  /* Thiết lập hiệu ứng chuyển động */
+  transition: transform 0.3s ease;
+  width: 100%;
+  /* Thiết lập hình nền */
+  /* Thiết lập kiểu con trỏ mặc định */
+  cursor: pointer;
+}
+
+/* Thiết lập hiệu ứng khi hover vào */
+.myElement:hover {
+  /* Scale phần tử lên khi hover vào */
+  transform: scale(1.05);
+  /* Thay đổi hình dạng của con trỏ chuột khi hover vào */
+  cursor: pointer;
+}
