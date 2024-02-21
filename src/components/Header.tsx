@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <Link className="navbar-brand" to='/'><strong>Web Bán Hàng</strong></Link>
+                <Link className="navbar-brand" to='/'><strong>Mobile Khoi</strong></Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
@@ -37,16 +37,16 @@ const Header = () => {
                     <ul className="navbar-nav">
                         {isLoggedIn ? (
                             <>
-                                <li className="nav-item dropdown" style={{ marginRight: '30px',  marginTop: '3px'}}>
-                                <div className="avatar" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
-                                >
-                                    <img 
-                                    src={'../images/product1.jpg'} // Thay đổi thành URL hình ảnh của người dùng
-                                    alt="User Avatar"
-                                    style={{ width: '25px', height: '25px', borderRadius: '50%', cursor: 'pointer' }}
-                                    />
-                                    <span className="username ml-4">{user.name}</span>
-                                </div>
+                                <li className="nav-item dropdown" style={{ marginRight: '30px',  marginTop: '5px'}}>
+                                    <div className="nav-item avatar" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+                                    >
+                                        <img 
+                                        src={'../images/product1.jpg'} // Thay đổi thành URL hình ảnh của người dùng
+                                        alt="User Avatar"
+                                        style={{ width: '25px', height: '25px', borderRadius: '50%', cursor: 'pointer' }}
+                                        />
+                                        <span className="username ml-4">{user.name}</span>
+                                    </div>
                         
                                     <ul className="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
                                         <li><Link to="/profile" className="dropdown-item">Profile</Link></li>
