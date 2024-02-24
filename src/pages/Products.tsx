@@ -5,6 +5,10 @@ import DATA from '../data/products'
 import { useNavigate } from 'react-router-dom'
 import { TextField, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { Delete, Update } from '@mui/icons-material'
+import DeleteProduct from '../components/DeleteProduct'
+import UpdateProduct from '../components/UpdateProduct'
+import { useUserContext } from '../contexts/UserContext'
 
 
 type ProductItem = {
@@ -16,6 +20,10 @@ type ProductItem = {
 }
 
 const Products = () => {
+
+    const { user, logout } = useUserContext()
+
+    const isLoggedIn = user.auth
 
     // const [products, setProducts] = useState<ProductItem[]>([])
     const navigate = useNavigate();
@@ -84,12 +92,18 @@ const Products = () => {
                 {filteredProducts.map(item => {
                     return (
                         <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-                            <div className="card myElement" onClick={()=>handleClick(item.id)} >
+                            <div className="card myElement"  >
                                 <img src={item.img} className="card-img-top" alt={item.name} />
-                                <div className="card-body" >
-                                    <p className="card-title">{item.name}</p>
+                                <div className="card-body" onClick={()=>handleClick(item.id)} >
+                                    <p className="card-title">{item.name} </p>
                                     <p className="card-text">${item.price}</p>
                                 </div>
+                                {isLoggedIn &&
+                                    <>
+                                        <UpdateProduct></UpdateProduct>
+                                        <DeleteProduct id={item.id}></DeleteProduct>
+                                    </>
+                                }                             
                             </div>
                         </div>
                     )

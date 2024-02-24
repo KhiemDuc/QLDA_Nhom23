@@ -4,6 +4,7 @@ import CartItem from './CartItem'
 import { useShoppingContext } from '../contexts/ShoppingContext'
 import { formatCurrency } from '../helpers/common'
 import { useUserContext } from '../contexts/UserContext'
+import CreateProduct from './CreateProduct'
 const Header = () => {
     const { cartItems, cartQty, totalPrice } = useShoppingContext()
     const { user, logout } = useUserContext()
@@ -20,16 +21,40 @@ const Header = () => {
                 <Link className="navbar-brand" to='/'><strong>Mobile Khoi</strong></Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to='/'>Home</Link>
-                        </li>
                         
-                        <li className="nav-item">
-                            <Link className="nav-link" to='/products'>Products</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to='/contact'>Contact</Link>
-                        </li>
+                        { isLoggedIn ? (
+                            <>
+                            <li className="nav-item active">
+                            <Link className="nav-link" to='/'>Home</Link>
+                            </li>
+                            
+                            <li className="nav-item">
+                                <Link className="nav-link" to='/products'>Products</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to='/contact'>Contact</Link>
+                            </li>
+                            <li className="nav-item">
+                                <CreateProduct/>
+                            </li>
+                            
+                            </>
+                        ): (
+                            <>
+                            <li className="nav-item active">
+                            <Link className="nav-link" to='/'>Home</Link>
+                            </li>
+                            
+                            <li className="nav-item">
+                                <Link className="nav-link" to='/products'>Products</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to='/contact'>Contact</Link>
+                            </li>
+                            
+                            </>
+                            
+                        )}
                     </ul>
                 </div>
 
@@ -38,6 +63,8 @@ const Header = () => {
                         {isLoggedIn ? (
                             <>
                                 <li className="nav-item dropdown" style={{ marginRight: '30px',  marginTop: '5px'}}>
+                                    
+
                                     <div className="nav-item avatar" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
                                     >
                                         <img 
